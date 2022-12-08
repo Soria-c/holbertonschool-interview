@@ -4,8 +4,7 @@
 
 def canUnlockAll(boxes):
     """Method that determines if all the boxes can be opened."""
-    if (not len(boxes) or not len(boxes[0])):
-        return (False)
+
     visited = {}
     len_v = len(visited)
     rem_boxes = len(boxes) - 1
@@ -15,7 +14,7 @@ def canUnlockAll(boxes):
     while(len_v != rem_boxes):
         k = set()
         for i in keys:
-            if (i):
+            if (i and i <= (rem_boxes + 1)):
                 k = k.union(set(boxes[i]))
                 index = str(i)
                 if (not visited.get(index)):
