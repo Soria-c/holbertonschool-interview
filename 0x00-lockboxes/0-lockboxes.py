@@ -14,7 +14,7 @@ def canUnlockAll(boxes):
     while(len_v != rem_boxes):
         k = set()
         for i in keys:
-            if (i and i <= (rem_boxes + 1)):
+            if (i and i < (rem_boxes + 1)):
                 k = k.union(set(boxes[i]))
                 index = str(i)
                 if (not visited.get(index)):
