@@ -24,4 +24,5 @@ def canUnlockAll(boxes):
         len_v = len(visited)
         keys = k.difference(total_keys)
         total_keys = total_keys.union(keys)
-    return len(total_keys - {0}) == rem_boxes
+
+    return len(visited) == rem_boxes
