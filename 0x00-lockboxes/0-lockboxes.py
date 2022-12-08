@@ -10,7 +10,6 @@ def canUnlockAll(boxes):
     rem_boxes = len(boxes) - 1
     keys = set(boxes[0])
     total_keys = keys
-    final_len_v = 0
 
     while(len_v != rem_boxes):
         k = set()
@@ -20,11 +19,10 @@ def canUnlockAll(boxes):
                 index = str(i)
                 if (not visited.get(index)):
                     visited[index] = True
-        final_len_v = len(visited)
-        if (final_len_v == len_v):
+        if (len(visited) == len_v):
             break
-        len_v = final_len_v
+        len_v = len(visited)
         keys = k.difference(total_keys) - {0}
         total_keys = total_keys.union(keys)
 
-    return final_len_v == rem_boxes
+    return len_v == rem_boxes
