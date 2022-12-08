@@ -21,10 +21,10 @@ def canUnlockAll(boxes):
                 if (not visited.get(index)):
                     visited[index] = True
         final_len_v = len(visited)
-        if (final_len_v  == len_v):
+        if (final_len_v == len_v):
             break
-        len_v = final_len_v 
+        len_v = final_len_v
         keys = k.difference(total_keys)
         total_keys = total_keys.union(keys)
 
-    return final_len_v  == rem_boxes
+    return final_len_v == rem_boxes
