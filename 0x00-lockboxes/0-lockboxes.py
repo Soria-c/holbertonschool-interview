@@ -4,6 +4,8 @@
 
 def canUnlockAll(boxes):
     """Method that determines if all the boxes can be opened."""
+    if (not len(boxes) or not len(boxes[0])):
+        return (False)
     visited = {}
     len_v = len(visited)
     rem_boxes = len(boxes) - 1
