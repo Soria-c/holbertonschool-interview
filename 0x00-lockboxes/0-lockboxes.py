@@ -16,8 +16,7 @@ def canUnlockAll(boxes):
         for i in keys:
             if (i and i < (rem_boxes + 1)):
                 k = k.union(set(boxes[i]))
-                index = str(i)
-                visited[index] = True
+                visited[str(i)] = True
         if (len(visited) == len_v):
             break
         len_v = len(visited)
