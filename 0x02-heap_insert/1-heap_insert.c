@@ -75,7 +75,7 @@ void sort(heap_t **node)
  */
 heap_t *heap_insert(heap_t **root, int value)
 {
-	heap_t *node, *tmp = *root, *tmp2;
+	heap_t *node, *tmp = *root;
 	unsigned int *path, bit_length, i, size;
 
 	if (!(*root))
