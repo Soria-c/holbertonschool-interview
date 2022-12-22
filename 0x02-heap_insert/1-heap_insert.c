@@ -109,6 +109,8 @@ heap_t *heap_insert(heap_t **root, int value)
 		tmp = path[i] ? tmp->right : tmp->left;
 
 	node = binary_tree_node(tmp, value);
+	if (!node)
+		return (NULL);
 	if (!path[i])
 		tmp->left = node;
 	else
