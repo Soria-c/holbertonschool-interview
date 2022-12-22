@@ -63,7 +63,8 @@ void sort(heap_t **node)
 	(*node)->n = (*node)->parent->n;
 	(*node)->parent->n = tmp;
 
-	sort(&(*node)->parent);
+	*node = (*node)->parent;
+	sort(node);
 }
 
 /**
