@@ -103,18 +103,16 @@ heap_t *heap_insert(heap_t **root, int value)
 	}
 
 	bit_length = bit_amount(size);
-
 	path = get_path(size, bit_length);
 	for (i = bit_length - 2; i; i--)
 		tmp = path[i] ? tmp->right : tmp->left;
 
 	node = binary_tree_node(tmp, value);
-	if (!node)
-		return (NULL);
 	if (!path[i])
 		tmp->left = node;
 	else
 		tmp->right = node;
 	sort(&node);
+	free(path);
 	return (node);
 }
