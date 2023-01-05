@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Min operations"""
 
+
 def minOperations(n):
     """Min operations"""
     if (n < 0 or not isinstance(n, int)):
