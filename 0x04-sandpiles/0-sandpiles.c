@@ -29,12 +29,13 @@ void print_grid(int grid[3][3])
  */
 void topple_corners(int grid[3][3], int *unstable)
 {
+	int i, j;
 	int local_unstable = 0;
 	int toppled[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-	for (size_t i = 0; i <= 2; i += 2)
+	for (i = 0; i <= 2; i += 2)
 	{
-		for (size_t j = 0; j <= 2; j += 2)
+		for (j = 0; j <= 2; j += 2)
 		{
 			local_unstable += grid[i][j] >= 4 ? 1 : 0;
 			toppled[(i * 3) + j] = grid[i][j] >= 4 ? 1 : 0;
@@ -44,9 +45,9 @@ void topple_corners(int grid[3][3], int *unstable)
 	}
 	if (!local_unstable)
 		return;
-	for (size_t i = 0; i <= 2; i += 2)
+	for (i = 0; i <= 2; i += 2)
 	{
-		for (size_t j = 0; j <= 2; j += 2)
+		for (j = 0; j <= 2; j += 2)
 		{
 			if (!j && toppled[(i * 3) + j])
 			{
@@ -74,10 +75,11 @@ void topple_corners(int grid[3][3], int *unstable)
  */
 void topple_sides(int grid[3][3], int *unstable)
 {
+	int i, j;
 	int local_unstable = 0;
 	int toppled[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-	for (size_t i = 1, j = 0; i < 9; i += 2)
+	for (i = 1, j = 0; i < 9; i += 2)
 	{
 		j += i / 3 == j + 1 ? 1 : 0;
 		local_unstable += grid[j][i % 3] >= 4 ? 1 : 0;
@@ -89,7 +91,7 @@ void topple_sides(int grid[3][3], int *unstable)
 	if (!local_unstable)
 		return;
 
-	for (size_t i = 1, j = 0; i < 9; i += 2)
+	for (i = 1, j = 0; i < 9; i += 2)
 	{
 		j += i / 3 == j + 1 ? 1 : 0;
 		if (((i % 3) % 2) && toppled[(j * 3) + (i % 3)])
@@ -121,6 +123,7 @@ void topple_sides(int grid[3][3], int *unstable)
  */
 void topple_center(int grid[3][3], int *unstable)
 {
+	int i, j;
 	int local_unstable = 0;
 
 	local_unstable += grid[1][1] >= 4 ? 1 : 0;
@@ -128,7 +131,7 @@ void topple_center(int grid[3][3], int *unstable)
 	*unstable += grid[1][1] >= 4 ? 1 : 0;
 	if (local_unstable)
 	{
-		for (size_t i = 1, j = 0; i < 9; i += 2)
+		for (i = 1, j = 0; i < 9; i += 2)
 		{
 			j += i / 3 == j + 1 ? 1 : 0;
 			grid[j][i % 3] += 1;
@@ -147,10 +150,11 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 {
 	int unstable = 1;
 	int local_unstable = 0;
+	int i, j;
 
-	for (size_t i = 0; i < 3; i++)
+	for (i = 0; i < 3; i++)
 	{
-		for (size_t j = 0; j < 3; j++)
+		for (j = 0; j < 3; j++)
 		{
 			grid1[i][j] = grid1[i][j] + grid2[i][j];
 			local_unstable += grid1[i][j] >= 4 ? 1 : 0;
