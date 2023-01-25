@@ -18,7 +18,7 @@ def print_data(signal=None, frame=None):
     print("File size: " + str(total_size))
     for j, k in sorted(status_code.items()):
         if (k):
-            print(str(j) +": " + str(k))
+            print(str(j) + ": " + str(k))
     if (signal and frame):
         exit(0)
 
