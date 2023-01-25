@@ -15,7 +15,7 @@ total_size = 0
 
 def print_data(signal=None, frame=None):
     """Prints statistics data"""
-    print(f"File size: {total_size}")
+    print("File size: " + str(total_size))
     for j, k in sorted(status_code.items()):
         if (k):
             print(f"{j}: {k}")
