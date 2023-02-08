@@ -16,5 +16,5 @@ int is_palindrome(unsigned long n)
 		(((n / l_digit) % 10) == ((n % r_digit) / (r_digit / 10)));
 		l_digit /= 10, r_digit *= 10)
 		;
-	return (1);
+	return (r_digit > l_digit ? 1 : 0);
 }
