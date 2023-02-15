@@ -1,10 +1,8 @@
 #!/usr/bin/python3
 """Utf-8 validation"""
 
-from typing import List
 
-
-def validUTF8(data: List[int]) -> bool:
+def validUTF8(data: list) -> bool:
     """Validates a dataset"""
     byte_blocks = 0
     for i in data:
