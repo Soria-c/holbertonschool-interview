@@ -9,11 +9,11 @@ def validUTF8(data: list) -> bool:
         return False
     for i in data:
         if not byte_blocks:
-            if i >> 3 == 0b11110:
+            if i & 0b11110000 == 0b11110000:
                 byte_blocks = 3
-            elif i >> 4 == 0b1110:
+            elif i & 0b11100000 == 0b11100000:
                 byte_blocks = 2
-            elif i >> 5 == 0b110:
+            elif i & 0b11000000 == 0b11000000:
                 byte_blocks = 1
             elif i >> 7 != 0:
                 return False
