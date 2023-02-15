@@ -6,6 +6,8 @@ def validUTF8(data: list) -> bool:
     """Validates a dataset"""
     byte_blocks = 0
     for i in data:
+        if not isinstance(i, int):
+            return False
         if not byte_blocks:
             if i >> 3 == 0b11110:
                 byte_blocks = 3
