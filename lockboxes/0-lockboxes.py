@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Lockboxes"""
+"""This module contains the function canUnlockAll"""
 
 
 def canUnlockAll(boxes):
