@@ -15,7 +15,7 @@ def canUnlockAll(boxes):
         boxes is a list of lists
     """
     box_len = len(boxes)
-    keys = set({0, *filter(lambda x: x < box_len, boxes[0])})
+    keys = set({0}).union(filter(lambda x: x < box_len, boxes[0]))
     i = 1
     while i < box_len - 1 and len(keys) != box_len:
         if i in keys:
